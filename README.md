@@ -1,5 +1,4 @@
-# What individual factors correlate with Canadians’ opposition to raising carbon taxes on gas and fossil fuels or coal?
-
+# What individual factors correlate with Canadians' support for raising carbon taxes on gas, fossil fuels, or coal?  
 ## A secondary analysis of the TISP dataset
 
 
