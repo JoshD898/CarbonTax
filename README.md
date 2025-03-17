@@ -1,3 +1,5 @@
+![Slide1](https://github.com/user-attachments/assets/09e41466-68ad-4b0e-aee2-9adb4043f717)
+
 # What individual factors correlate with Canadians' support for raising carbon taxes on gas, fossil fuels, or coal?  
 ## A secondary analysis of the TISP dataset
 
