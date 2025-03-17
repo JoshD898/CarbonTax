@@ -13,7 +13,7 @@ The test results are printed to the command line and stored here for convenience
 >> Sex U-statistic: 707277.0
 >> Sex P-value: 0.23144956228456004
 >> 
->> Location U-statistic: 459573.0
+>> Location U-statistic: 599901.0
 >> Location P-value: 3.3569456524959816e-07
 >> 
 >> Spearman's Rank Correlation Tests:
@@ -71,8 +71,8 @@ print(f"Sex P-value: {sex_p_value}\n")
 
 
 location_df = canada_df.dropna(subset=["Carbon Tax Support", "Living Area"])
-urban_responses = canada_df.loc[canada_df["Living Area"] == "0", "Carbon Tax Support"].to_list()
-rural_responses = canada_df.loc[canada_df["Living Area"] == "1", "Carbon Tax Support"].to_list()
+urban_responses = canada_df.loc[canada_df["Living Area"] == "1", "Carbon Tax Support"].to_list()
+rural_responses = canada_df.loc[canada_df["Living Area"] == "0", "Carbon Tax Support"].to_list()
 
 location_stat, location_p_value = sp.stats.mannwhitneyu(urban_responses, rural_responses, alternative="two-sided")
 

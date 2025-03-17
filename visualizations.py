@@ -24,8 +24,8 @@ valueMaps = {
         "4" : "Higher education"
     },
     "Living Area" : {
-        "1" : "Rural",
-        "0" : "Urban"
+        "1" : "Urban",
+        "0" : "Rural"
     }
 }
 
@@ -50,18 +50,23 @@ for col, mapping in valueMaps.items():
     if col in canada_df.columns:
         canada_df[col] = canada_df[col].replace(mapping)
 
+
+
+
+
 def aggregateByColumn(colName : str, df : pd.DataFrame) -> pd.DataFrame:
     '''
     Produces a dataframe of with total of responses to "do you support raising carbon tax" aggregated by the given column
 
     Any rows with NaN in the specified column are not included in the final dataframe.
     '''
-
     df = df.dropna(subset = [colName])
 
     aggregate_df = df.groupby(colName)["Carbon Tax Support"].value_counts().unstack()
 
     return aggregate_df
+
+
 
 def plotAggregateSideFig(aggregated_df: pd.DataFrame, colName : str, filename: str):
     aggregated_percent = aggregated_df.div(aggregated_df.sum(axis=1), axis=0) * 100
@@ -121,14 +126,6 @@ def plotAggregateSideFig(aggregated_df: pd.DataFrame, colName : str, filename: s
 
     ax.set_title(f"Support for Raising Carbon Tax by {colName}")
 
-    # ax.spines["top"].set_visible(False)
-    # ax.spines["right"].set_visible(False)
-
-    # legend = ax.legend([bar3, bar2, bar1], ["Very much", "Moderately", "Not at all"], loc="upper right",  title = "Support for raising carbon taxes", labelcolor="white")
-
-    # legend.get_title().set_color("white")
-    # legend.get_frame().set_facecolor("none")
-
     plt.savefig(filename, dpi=300, bbox_inches="tight", transparent=False)
 
 
@@ -157,8 +154,6 @@ def plotAggregateMainFig(aggregated_df: pd.DataFrame):
     bottom += aggregated_percent["Moderately"].values
     bar3 = ax.bar(species, aggregated_percent["Very much"], 0.5, label="Very much", bottom=bottom, color = '#73EAFA')
 
-    # Add percentage labels to each bar
-
     for bar in [bar1, bar2, bar3]:
         for rect in bar:
             height = rect.get_height()
@@ -175,8 +170,6 @@ def plotAggregateMainFig(aggregated_df: pd.DataFrame):
     total_counts = aggregated_df.sum(axis=1)
     ax.set_yticks([])
     ax.axhline(0, color='grey', linewidth=0.2, zorder = 0)
-    
-    # x_labels = [f"{species[i]}\nN = {total_counts.iloc[i]}" for i in range(len(species))]
 
     x_labels = [
         f"Strongly Liberal\nN = {total_counts.iloc[i]}" if i == 0 else
@@ -191,8 +184,6 @@ def plotAggregateMainFig(aggregated_df: pd.DataFrame):
     ax.set_xticks(x_positions)
     ax.tick_params(axis="x", colors="white") 
     ax.set_xticklabels(x_labels, ha="center", color = "white") 
-
-    # ax.set_title(f"Support for Raising Carbon Tax by {colName}")
 
     ax.spines["bottom"].set_color("white") 
     ax.spines["left"].set_color("white") 
