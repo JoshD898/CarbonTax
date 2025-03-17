@@ -1,6 +1,5 @@
-# What individual factors correlate with Canadians' support for raising carbon taxes on gas, fossil fuels, or coal?  
-## A secondary analysis of the TISP dataset
 
+![poster](https://github.com/user-attachments/assets/c01dbf6c-26bd-4669-a1cf-d74719cb814c)
 
 ### References
 [1] Ambasta A, Buonocore JJ. Carbon pricing: a win-win environmental and public health policy. Canadian Journal of Public Health. 2018;109(5):779-781.
