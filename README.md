@@ -37,7 +37,7 @@ Visualizations were generated in Python using the Matplotlib library.
 
 Urban residence, conservative ideology, higher age and lower levels of education are correlated with higher opposition to increasing carbon taxes on gas and fossil fuel. No significant relationship was found for sex or religiosity.
 
-Refer to `Poster.ppt`, `analysis.py` and `visualizations.py` for more detailed results.
+Refer to `Poster.pdf`, `analysis.py` and `visualizations.py` for more detailed results.
 
 ### Discussion
 While statistically significant, it should be noted that the magnitudes of correlation that age and level of education have with support for increased carbon tax is small. Furthermore, the distribution of responses for level of education is overwhelmingly skewed towards higher education.
